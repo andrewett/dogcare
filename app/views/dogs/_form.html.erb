@@ -1,0 +1,16 @@
+<%= simple_form_for(@dog, html: { class: 'form-group' }) do |f| %>
+  <div class="col-md-6">
+  <%= f.input :name %>
+  <%= f.association :client, label_method: :name, value_method: :id %>
+  <%= f.input :breed %>
+  <%= f.input :temperament, label: 'Personality Notes' %>
+  <%= f.input :friends, label: 'Gets Along Well With:' %>
+  </div>
+  <div class="col-md-6">
+  <%= f.input :housing, label: 'Housing Notes' %>
+  <%= f.input :birthday, required: false %>
+  <%= f.input :avatar %>
+  <%= f.input :active, input_html: { :checked => true } %>
+  <%= f.button :submit, class: "btn btn-default" %>
+  </div>
+<% end %>

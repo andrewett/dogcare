@@ -1,0 +1,29 @@
+<div class="media">
+  <% unless dog.avatar.file.nil? %>
+    <div class="media-left">
+      <%= image_tag dog.avatar.url, class: "media-object", size: 100 %>
+    </div>
+  <% end %>
+  <div class="media-body">
+    <h5 class="media-heading">
+      <%= link_to dog.name, edit_dog_path(id: dog.id) %>
+      <span class="text-muted">Owner: <%= dog.client.name %> | Breed: <%= dog.breed %></span>
+    </h5>
+    <% if dog.temperament != '' %>
+      <p>Personality: <%= dog.temperament %></p>
+    <% end %>
+    <% if dog.friends != '' %>
+      <p>Gets Along With: <%= dog.friends %></p>
+    <% end %>
+    <% if dog.housing != '' %>
+      <p>Housing Notes: <%= dog.housing %></p>
+    <% end %>
+  </div>
+  <div class="media-right">
+    <% if dog.active? %>
+      <p>Here for Daycare! <br/> <%= link_to 'Toggle', active_path(id: dog.id) %></p>
+    <% else %>
+      <%= link_to 'Add to Daycare', active_path(id: dog.id) %>
+    <% end %>
+  </div>
+</div>

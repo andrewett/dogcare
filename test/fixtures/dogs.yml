@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client: one
+  name: MyString
+  breed: MyString
+  birthday: 2018-11-27
+  temperament: MyText
+  friends: MyText
+  housing: MyText
+  active: false
+
+two:
+  client: two
+  name: MyString
+  breed: MyString
+  birthday: 2018-11-27
+  temperament: MyText
+  friends: MyText
+  housing: MyText
+  active: false
