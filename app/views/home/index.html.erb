@@ -4,7 +4,7 @@
   <%= render 'post_loop' %>
 <% end %>
 
-<h1>Today's Daycare</h1>
+<h2>Today's Daycare</h2>
 
 <% if user_signed_in? && (can? :manage, @dogs) %>
   <% @dogs.each do |dog| %>
