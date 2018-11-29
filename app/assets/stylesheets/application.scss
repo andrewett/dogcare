@@ -17,13 +17,24 @@
 @import 'bootstrap';
 
 .media {
-  background-color: white;
+  background-color:white;
   padding: 15px;
-  border-radius: 15px;
+  border-radius: 5px;
   box-shadow: 0 1px 2px;
 }
 
 body {
-    background-color: #f2f2f2;
+  background-color:#d5f4e6;
 }
 
+.navbar-default {
+  background-color:white;
+}
+
+p, h5 {
+  font-size:120%;
+}
+
+.red-text {
+  color:red;
+}

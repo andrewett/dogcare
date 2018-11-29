@@ -9,7 +9,7 @@
   <div class="panel-body">
     <h5>
       <%= link_to dog.name, edit_dog_path(id: dog.id) %>
-      <span class="text-muted">Owner: <%= dog.client.name %> | Breed: <%= dog.breed %></span>
+      <span class="text-muted">Owner: <%= dog.owner %> | <%= dog.gender %> <%= dog.breed %></span>
     </h5>
     <div>
       <% if dog.active? %>
