@@ -2,6 +2,8 @@ class HomeController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
+    @post = Post.new
+    @posts = Post.all.sort_by(&:updated_at).reverse
     @dogs = Dog.all.sort_by(&:name).select(&:active?)
   end
 
@@ -19,5 +21,11 @@ class HomeController < ApplicationController
       dog.save
     end
     redirect_to dogs_path
+  end
+
+  def delete_post
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_back(fallback_location: root_path)
   end
 end

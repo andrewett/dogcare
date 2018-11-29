@@ -1,3 +1,9 @@
+<% if user_signed_in? && (can? :manage, @dogs) %>
+  <h2>Today's Notes</h2>
+  <%= render 'post', post: @post %>
+  <%= render 'post_loop' %>
+<% end %>
+
 <h1>Today's Daycare</h1>
 
 <% if user_signed_in? && (can? :manage, @dogs) %>
