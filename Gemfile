@@ -44,6 +44,8 @@ gem 'devise'
 
 gem 'carrierwave'
 
+gem 'faker'
+
 gem 'simple_form'
 
 group :development, :test do

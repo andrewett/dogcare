@@ -9,7 +9,7 @@ class HomeController < ApplicationController
     dog = Dog.find(params[:id])
     dog.active? ? dog.update(active: false) : dog.update(active: true)
     dog.save
-    redirect_to root_path
+    redirect_back(fallback_location: root_path)
   end
 
   def toggle_all

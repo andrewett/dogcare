@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+  faker:
+    dog:
+      gender_fixed: ['Neutered', 'Spayed', 'Unaltered Male', 'Unaltered Female']
+      temperament: ['CAUTION: Will bite', "Doesn't like unaltered males", 'Likes playing aggressive', 'Very loud, will bark at others', '', 'Sweet, but go slow. Needs to get to know you.', '', '', '', '']
+      friends: ['']
+      housing: ['Chews towels', 'Take out often', '', '', '', '', '', 'Needs a bottom house']
+

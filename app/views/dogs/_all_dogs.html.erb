@@ -1,11 +1,11 @@
 <div class="panel panel-default col-md-3">
-  <div class="panel-heading">
   <% unless dog.avatar.file.nil? %>
-    <div class="text-center">
+    <div class="panel-heading">
+     <div class="text-center">
       <%= image_tag dog.avatar.url, size: 200 %>
-    </div>
+     </div>
+   </div>
   <% end %>
-  </div>
   <div class="panel-body">
     <h5>
       <%= link_to dog.name, edit_dog_path(id: dog.id) %>
@@ -13,9 +13,9 @@
     </h5>
     <div>
       <% if dog.active? %>
-        <p>Here for Daycare! <br/> <%= link_to 'Toggle', active_path(id: dog.id) %></p>
+        <p>Here for Daycare! <br/> <%= link_to 'Toggle', active_path(id: dog.id), class: 'btn btn-warning' %></p>
       <% else %>
-        <%= link_to 'Add to Daycare', active_path(id: dog.id) %>
+        <%= link_to 'Add to Daycare', active_path(id: dog.id), class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>

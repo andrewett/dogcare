@@ -26,10 +26,6 @@
     <% end %>
   </div>
   <div class="media-right">
-    <% if dog.active? %>
-      <p>Here for Daycare! <br/> <%= link_to 'Toggle', active_path(id: dog.id) %></p>
-    <% else %>
-      <%= link_to 'Add to Daycare', active_path(id: dog.id) %>
-    <% end %>
+    <p>Here for Daycare! <br/> <%= link_to 'Toggle', active_path(id: dog.id), class: 'btn btn-warning' %></p>
   </div>
 </div>
