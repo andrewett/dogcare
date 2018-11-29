@@ -1,5 +1,12 @@
 <h1>All of Our Dogs</h1>
 
-<% @dogs.each do |dog| %>
-  <%= render 'all_dogs', dog: dog %>
+<% if user_signed_in? && (can? :manage, @dogs) %>
+  <% @dogs.each do |dog| %>
+    <%= render 'all_dogs', dog: dog %>
+  <% end %>
+<% else %>
+  <% @dogs.each do |dog| %>
+    <%= render 'dogs/basic_dog', dog: dog %>
+  <% end %>
 <% end %>
+

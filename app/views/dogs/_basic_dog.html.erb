@@ -1,0 +1,6 @@
+<div class="col-md-4 well text-center">
+  <% if dog.avatar.url != nil %>
+    <div class="row"><%= image_tag dog.avatar.url, size:200 %></div>
+  <% end %>
+  <div class="row"><h3><%= dog.name %></h3></div>
+</div>
