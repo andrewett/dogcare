@@ -3,7 +3,12 @@ class DogsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @dogs = Dog.all.sort_by(&:name)
+    @dogs = Dog.all
+    if params[:search]
+      @dogs = Dog.search(params[:search]).sort_by(&:name)
+    else
+      @dogs = Dog.all.sort_by(&:name)
+    end
   end
 
   def show

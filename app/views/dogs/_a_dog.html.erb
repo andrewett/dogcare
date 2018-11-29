@@ -5,16 +5,16 @@
     </div>
   <% end %>
   <div class="media-body">
-    <h5 class="media-heading">
+    <h4 class="media-heading">
       <%= link_to dog.name, edit_dog_path(id: dog.id) %>
-      <span class="text-muted">Owner: <%= dog.owner %>
+      <h5 class="text-muted">Owner: <%= dog.owner %>
         | <% if dog.gender == 'Neutered' || dog.gender == 'Spayed' %>
           <%= dog.gender %>
         <% else %>
           <span class="red-text"><%= dog.gender %> </span>
         <% end %>
-        <%= dog.breed %></span>
-    </h5>
+        <%= dog.breed %></h5>
+    </h4>
     <% if dog.temperament != '' %>
       <p>Personality: <%= dog.temperament %></p>
     <% end %>
