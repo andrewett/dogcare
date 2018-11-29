@@ -12,10 +12,16 @@
       <h5 class="text-muted">Owner: <%= dog.owner %> | <%= dog.gender %> <%= dog.breed %></h5>
     </h4>
     <div>
-      <% if dog.active? %>
-        <p>Here for Daycare!</p>
+      <% if dog.boarding? %>
+        <p><strong>Boarding!</strong></p>
+      <% elsif dog.active? %>
+        <p><em>Daycare!</em></p>
+        <%= link_to 'Switch to boarding?', boarding_path(id: dog.id), class: 'btn btn-warning' %>
       <% else %>
-        <%= link_to 'Add to Daycare', active_path(id: dog.id), class: 'btn btn-primary' %>
+        <div class="btn-group-vertical">
+          <%= link_to 'Add to Daycare', active_path(id: dog.id), class: 'btn btn-info' %>
+          <%= link_to 'Add to Boarding', boarding_path(id: dog.id), class: 'btn btn-primary' %>
+        </div>
       <% end %>
     </div>
   </div>

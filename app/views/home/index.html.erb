@@ -1,23 +1,25 @@
 <% if user_signed_in? && (can? :manage, @dogs) %>
-  <h2>Today's Notes</h2>
+  <h2>Today's Notes: <%= @boarding_count %> Boarders and <%= @daycare_count %> Daycare.</h2>
   <%= render 'post', post: @post %>
   <%= render 'post_loop' %>
 <% end %>
 
-<h2>Today's Daycare</h2>
-
 <% if user_signed_in? && (can? :manage, @dogs) %>
+  <h2>Today's Dogs</h2>
   <% @dogs.each do |dog| %>
     <%= render 'dogs/a_dog', dog: dog %>
   <% end %>
 
   <br/>
   <div class="pull-right">
-    <%= link_to 'Remove All', remove_all_path, class: 'btn btn-danger' %>
+    <%= link_to 'Remove All Daycare', remove_all_path, class: 'btn btn-danger' %>
   </div>
 
 <% else %>
+  <h2>Today's Daycare</h2>
   <% @dogs.each do |dog| %>
-    <%= render 'dogs/basic_dog', dog: dog %>
+    <% if dog.active? && !dog.boarding? %>
+      <%= render 'dogs/basic_dog', dog: dog %>
+    <% end %>
   <% end %>
 <% end %>

@@ -11,7 +11,8 @@
   <%= f.input :housing, label: 'Housing Notes' %>
   <%= f.input :birthday, required: false %>
   <%= f.input :avatar %>
-  <%= f.input :active, input_html: { :checked => true } %>
+  <%= f.input :active, label: 'Daycare', input_html: { :checked => true } %>
+  <%= f.input :boarding %>
   <%= f.button :submit, class: "btn btn-default" %>
   </div>
 <% end %>

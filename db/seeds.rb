@@ -16,5 +16,6 @@
     friends: '',
     housing: Faker::Dog.housing,
     active: false,
+    boarding: false,
     gender: Faker::Dog.gender_fixed)
 end

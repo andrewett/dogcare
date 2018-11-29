@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   put 'downgrade_user' => 'employee#downgrade_user'
   devise_for :users
   root 'home#index'
-  get 'active' => 'home#toggle_dog'
-  get 'remove_all' => 'home#toggle_all'
+  get 'active' => 'home#toggle_daycare'
+  get 'remove_all' => 'home#toggle_all_daycare'
+  get 'boarding' => 'home#toggle_boarding'
   resources :dogs
   resources :posts
 

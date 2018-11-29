@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_29_160944) do
+ActiveRecord::Schema.define(version: 2018_11_29_194958) do
 
   create_table "dogs", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_160944) do
     t.string "avatar"
     t.string "gender"
     t.string "owner"
+    t.boolean "boarding"
   end
 
   create_table "posts", force: :cascade do |t|
