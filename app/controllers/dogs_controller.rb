@@ -1,5 +1,6 @@
 class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @dogs = Dog.all.sort_by(&:name)
@@ -10,9 +11,11 @@ class DogsController < ApplicationController
 
   def new
     @dog = Dog.new
+    authorize! :create, @dog
   end
 
   def edit
+    authorize! :update, @dog
   end
 
   def create

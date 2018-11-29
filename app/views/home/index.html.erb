@@ -1,10 +1,17 @@
 <h1>Today's Daycare</h1>
 
-<% @dogs.each do |dog| %>
-  <%= render 'dogs/a_dog', dog: dog %>
-<% end %>
+<% if user_signed_in? && (can? :manage, @dogs) %>
+  <% @dogs.each do |dog| %>
+    <%= render 'dogs/a_dog', dog: dog %>
+  <% end %>
 
-<br/>
-<div class="pull-right">
-  <%= link_to 'Remove All', remove_all_path, class: 'btn btn-danger' %>
-</div>
+  <br/>
+  <div class="pull-right">
+    <%= link_to 'Remove All', remove_all_path, class: 'btn btn-danger' %>
+  </div>
+
+<% else %>
+  <% @dogs.each do |dog| %>
+    <%= render 'dogs/basic_dog', dog: dog %>
+  <% end %>
+<% end %>

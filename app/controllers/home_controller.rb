@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+
   def index
     @dogs = Dog.all.sort_by(&:name).select(&:active?)
   end

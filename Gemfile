@@ -39,6 +39,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 
+gem 'cancancan'
+gem 'devise'
+
 gem 'carrierwave'
 
 gem 'simple_form'
