@@ -28,6 +28,7 @@ class HomeController < ApplicationController
   def toggle_boarding
     dog = Dog.find(params[:id])
     dog.boarding? ? dog.update(boarding: false) : dog.update(boarding: true)
+    dog.update(active: false)
     dog.save
     redirect_back(fallback_location: root_path)
   end

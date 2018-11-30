@@ -16,7 +16,6 @@
         <p><strong>Boarding!</strong></p>
       <% elsif dog.active? %>
         <p><em>Daycare!</em></p>
-        <%= link_to 'Switch to boarding?', boarding_path(id: dog.id), class: 'btn btn-warning' %>
       <% else %>
         <div class="btn-group-vertical">
           <%= link_to 'Add to Daycare', active_path(id: dog.id), class: 'btn btn-info' %>
