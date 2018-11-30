@@ -1,7 +1,6 @@
 class CreateDogs < ActiveRecord::Migration[5.2]
   def change
     create_table :dogs do |t|
-      t.references :client, foreign_key: true
       t.string :name
       t.string :breed
       t.date :birthday
