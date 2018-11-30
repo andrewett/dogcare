@@ -48,6 +48,20 @@ gem 'faker'
 
 gem 'simple_form'
 
+gem 'fog-aws'
+gem 'figaro'
+
+#for our local server:
+group :development do
+  gem 'sqlite3'
+end
+
+#for Heroku:
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
