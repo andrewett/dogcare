@@ -10,6 +10,6 @@ class Dog < ApplicationRecord
   end
 
   def self.search(search)
-    where("name LIKE ?", "%#{search}%")
+    where("name ILIKE ?", "%#{search}%")
   end
 end
