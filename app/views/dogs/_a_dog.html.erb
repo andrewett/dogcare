@@ -1,4 +1,8 @@
-<div class="media">
+<% if dog.boarding? %>
+  <div class="media boarding-top">
+<% elsif dog.active? %>
+  <div class="media daycare-top">
+<% end %>
   <% unless dog.avatar.file.nil? %>
     <div class="media-left">
       <%= image_tag dog.avatar.url, class: "media-object", size: 100 %>
