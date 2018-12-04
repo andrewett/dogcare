@@ -1,11 +1,15 @@
 <% if user_signed_in? && (can? :manage, @dogs) %>
-  <h2>Today's Notes: <span class="small"><%= @boarding_count %> Boarders and <%= @daycare_count %> Daycare.</span></h2>
+  <div class="page-heading">
+    <h2>Today's Notes: <span class="small"><%= @boarding_count %> Boarders and <%= @daycare_count %> Daycare.</span></h2>
+  </div>
   <%= render 'post', post: @post %>
   <%= render 'post_loop' %>
 <% end %>
 
 <% if user_signed_in? && (can? :manage, @dogs) %>
-  <h2>Today's Dogs</h2>
+  <div class="page-heading">
+    <h2>Today's Dogs</h2>
+  </div>
   <% @dogs.each do |dog| %>
     <%= render 'dogs/a_dog', dog: dog %>
   <% end %>
@@ -16,7 +20,7 @@
   </div>
 
 <% else %>
-  <div class="page-header"><h2>Today's Daycare</h2></div>
+  <div class="page-heading"><h2>Today's Daycare</h2></div>
   <% @dogs.each do |dog| %>
     <% if dog.active? && !dog.boarding? %>
       <%= render 'dogs/basic_dog', dog: dog %>

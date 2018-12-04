@@ -11,7 +11,7 @@
   <div class="media-body">
     <h4 class="media-heading">
       <%= link_to dog.name, edit_dog_path(id: dog.id) %>
-      <h5 class="text-muted">Owner: <%= dog.owner %>
+      <h5>Owner: <%= dog.owner %>
         | <% if dog.gender == 'Neutered' || dog.gender == 'Spayed' %>
           <%= dog.gender %>
         <% else %>

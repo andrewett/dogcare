@@ -9,9 +9,9 @@ Rails.application.routes.draw do
     root 'home#index'
   end
   unauthenticated :user do
-    root 'home#index'
+    root 'home#info'
   end
-
+  get 'index' => 'home#index'
   get 'active' => 'home#toggle_daycare'
   get 'remove_all' => 'home#toggle_all_daycare'
   get 'boarding' => 'home#toggle_boarding'
