@@ -31,9 +31,9 @@
   </div>
   <div class="media-right">
     <% if dog.active == true && dog.boarding == false %>
-      <p><em>Daycare!</em> <br/> <%= link_to 'Remove Daycare', active_path(id: dog.id), class: 'btn btn-warning' %></p>
+      <p><em>Daycare!</em> <br/> <%= link_to 'Remove Daycare', active_path(id: dog.id), class: 'btn btn-info' %></p>
     <% else %>
-      <p><strong>Boarding!</strong> <br/><%= link_to 'Remove Boarder', boarding_path(id: dog.id), class: 'btn btn-warning' %></p>
+      <p><strong>Boarding!</strong> <br/><%= link_to 'Remove Boarder', boarding_path(id: dog.id), class: 'btn btn-primary' %></p>
     <% end %>
   </div>
 </div>
